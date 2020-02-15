@@ -159,6 +159,20 @@ func main() {
 		p, err = provider.NewAzureProvider(cfg.AzureConfigFile, domainFilter, zoneIDFilter, cfg.AzureResourceGroup, cfg.AzureUserAssignedIdentityClientID, cfg.DryRun)
 	case "azure-private-dns":
 		p, err = provider.NewAzurePrivateDNSProvider(domainFilter, zoneIDFilter, cfg.AzureResourceGroup, cfg.AzureSubscriptionID, cfg.DryRun)
+	case "bluecat":
+		// todo
+		p, err = provider.NewBlueCatProvider(
+			provider.DynConfig{
+				DomainFilter:  domainFilter,
+				ZoneIDFilter:  zoneIDFilter,
+				DryRun:        cfg.DryRun,
+				CustomerName:  cfg.DynCustomerName,
+				Username:      cfg.DynUsername,
+				Password:      cfg.DynPassword,
+				MinTTLSeconds: cfg.DynMinTTLSeconds,
+				AppVersion:    externaldns.Version,
+			},
+		)
 	case "vinyldns":
 		p, err = provider.NewVinylDNSProvider(domainFilter, zoneIDFilter, cfg.DryRun)
 	case "cloudflare":

@@ -25,7 +25,7 @@ require (
 	github.com/dnsimple/dnsimple-go v0.14.0
 	github.com/exoscale/egoscale v0.18.1
 	github.com/ffledgling/pdns-go v0.0.0-20180219074714-524e7daccd99
-	github.com/go-resty/resty v1.8.0 // indirect
+	github.com/go-resty/resty v1.8.0
 	github.com/gobs/pretty v0.0.0-20180724170744-09732c25a95b // indirect
 	github.com/gophercloud/gophercloud v0.1.0
 	github.com/heptio/contour v0.15.0
